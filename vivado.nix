@@ -14,6 +14,7 @@
     which
     util-linux
     stdenv.cc.cc.lib
+    stdenv.cc
 
     # Графика X11 и OpenGL
     libx11

@@ -1,0 +1,47 @@
+#-----------------------------------------------------------
+# Vivado v2026.1.1 (64-bit)
+# SW Build 6605303 on Fri Sep 04 05:45:32 MDT 2026
+# IP Build 6603865 on Fri Sep 04 05:05:05 MDT 2026
+# SharedData Build 6605217 on Fri Sep 04 02:50:14 MDT 2026
+# Start of session at: Fri Oct 16 23:37:30 2026
+# Process ID         : 11104
+# Current directory  : /home/ilya/vivado_nixos
+# Command line       : vivado
+# Log file           : /home/ilya/vivado_nixos/vivado.log
+# Journal file       : /home/ilya/vivado_nixos/vivado.jou
+# Running On         : nixos
+# Platform           : unknown
+# Operating System   : unknown
+# Processor Detail   : Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz
+# CPU Frequency      : 4685.881 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33348 MB
+# Swap memory        : 36682 MB
+# Total Virtual      : 70030 MB
+# Available Virtual  : 64368 MB
+#-----------------------------------------------------------
+start_gui
+create_project TensorZ_sandbox /home/ilya/vivado_project/TensorZ_sandbox -part xc7a35tcsg325-1
+file mkdir /home/ilya/vivado_project/TensorZ_sandbox/TensorZ_sandbox.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/ilya/vivado_project/TensorZ_sandbox/TensorZ_sandbox.srcs/sim_1/new/tb_top.v w ]
+add_files -fileset sim_1 /home/ilya/vivado_project/TensorZ_sandbox/TensorZ_sandbox.srcs/sim_1/new/tb_top.v
+file mkdir /home/ilya/vivado_project/TensorZ_sandbox/TensorZ_sandbox.srcs/sources_1/new
+close [ open /home/ilya/vivado_project/TensorZ_sandbox/TensorZ_sandbox.srcs/sources_1/new/ocssd_top.v w ]
+add_files /home/ilya/vivado_project/TensorZ_sandbox/TensorZ_sandbox.srcs/sources_1/new/ocssd_top.v
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/ilya/vivado_project/TensorZ_sandbox/TensorZ_sandbox.srcs/sim_1/new/tb_ocssd.v w ]
+add_files -fileset sim_1 /home/ilya/vivado_project/TensorZ_sandbox/TensorZ_sandbox.srcs/sim_1/new/tb_ocssd.v
+update_compile_order -fileset sim_1
+launch_simulation
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_ocssd [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
